@@ -12,7 +12,8 @@ void main() {
 
  library.loanBooks(book1, member1);
  library.displayBooks();
-
+ 
+ library.displayLoanBooks();
 
 }
 
@@ -43,6 +44,13 @@ class Library {
     print("------- All Books -------");
     for(var book in books) {
     print("Title: ${book.title} Author: ${book.author} isbn: ${book.isbn} isAvailable: ${book.isAvailable}");
+    }
+    print("------- - - - -------");
+  }
+  void displayLoanBooks(){
+    print("------- Loan Books -------");
+    for(var loan in loans) {
+    print("Title: ${loan.book.title} Author: ${loan.book.author} isbn: ${loan.book.isbn} isAvailable: ${loan.book.isAvailable} -- Member: ${loan.member.name}");
     }
     print("------- - - - -------");
   }
